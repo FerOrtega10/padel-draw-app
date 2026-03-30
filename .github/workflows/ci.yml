@@ -10,8 +10,6 @@ jobs:
   test:
     name: Run Tests
     runs-on: ubuntu-latest
-    env:
-      FORCE_JAVASCRIPT_ACTIONS_TO_NODE24: true
 
     steps:
       - name: Checkout code
@@ -35,8 +33,6 @@ jobs:
   lint:
     name: Run Linting
     runs-on: ubuntu-latest
-    env:
-      FORCE_JAVASCRIPT_ACTIONS_TO_NODE24: true
 
     steps:
       - name: Checkout code
@@ -55,7 +51,7 @@ jobs:
         run: pnpm install --frozen-lockfile
 
       - name: Install ESLint
-        run: pnpm add -D eslint @nuxt/eslint
+        run: pnpm add -D eslint @eslint/js
 
       - name: Run eslint
         run: pnpm eslint .
@@ -63,8 +59,6 @@ jobs:
   build:
     name: Build Project
     runs-on: ubuntu-latest
-    env:
-      FORCE_JAVASCRIPT_ACTIONS_TO_NODE24: true
 
     steps:
       - name: Checkout code
