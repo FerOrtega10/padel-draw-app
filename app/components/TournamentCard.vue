@@ -59,7 +59,7 @@ const formatDate = (dateStr: string) => {
       </div>
 
       <div class="flex items-center gap-3">
-        <UiButton :to="`/tournaments/${tournament.id}`"  variant="primary" size="md">
+        <UiButton :to="`/tournaments/${tournament.id}`" variant="primary" size="md">
             Ver Detalles
         </UiButton>
         <UiButton v-if="tournament.status === 'open'" variant="secondary" size="md">

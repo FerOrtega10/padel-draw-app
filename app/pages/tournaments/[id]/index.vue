@@ -239,11 +239,13 @@
               </div>
               <div class="text-right">
                 <p class="text-slate-400 text-xs">Status:</p>
-                <span :class="{
+                <span
+:class="{
                   'bg-emerald-100 text-emerald-800': registration.status === 'accepted',
                   'bg-indigo-100 text-indigo-800': registration.status === 'pending',
                   'bg-slate-100 text-slate-800': registration.status === 'rejected'
-                }" class="px-3 py-1 rounded-full text-xs font-medium">
+                }" class="px-3 py-1 rounded-full text-xs font-medium"
+>
                   {{ registration.status }}
                 </span>
               </div>
