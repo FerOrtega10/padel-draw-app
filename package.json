@@ -1,0 +1,34 @@
+{
+  "name": "paddeldraw-app",
+  "type": "module",
+  "private": true,
+  "scripts": {
+    "build": "nuxt build",
+    "dev": "nuxt dev",
+    "generate": "nuxt generate",
+    "preview": "nuxt preview",
+    "postinstall": "nuxt prepare",
+    "lint": "eslint .",
+    "lint:fix": "eslint . --fix",
+    "test": "vitest run",
+    "test:watch": "vitest"
+  },
+  "dependencies": {
+    "@nuxt/icon": "2.2.1",
+    "@supabase/supabase-js": "^2.98.0",
+    "nuxt": "^4.3.1",
+    "vue": "^3.5.29",
+    "vue-router": "^4.6.4"
+  },
+  "packageManager": "pnpm@10.30.3+sha512.c961d1e0a2d8e354ecaa5166b822516668b7f44cb5bd95122d590dd81922f606f5473b6d23ec4a5be05e7fcd18e8488d47d978bbe981872f1145d06e9a740017",
+  "devDependencies": {
+    "@nuxtjs/supabase": "^2.0.4",
+    "@nuxtjs/tailwindcss": "^6.14.0",
+    "@testing-library/jest-dom": "^6.9.1",
+    "@vitejs/plugin-vue": "^6.0.5",
+    "@vue/test-utils": "^2.4.6",
+    "jsdom": "^24.1.3",
+    "supabase": "^2.76.17",
+    "vitest": "^1.6.1"
+  }
+}

@@ -1,0 +1,7 @@
+# <type>(<scope>): <short description>
+# Types: feat | fix | refactor | style | docs | test | chore
+# Example: feat(auth): add Google OAuth login
+
+# Optional body: what and why (not how)
+
+# Footer: BREAKING CHANGE: ... / Closes #123
