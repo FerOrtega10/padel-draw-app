@@ -1,6 +1,6 @@
 import { describe, it, expect } from 'vitest'
 import { mount } from '@vue/test-utils'
-import Tag from '/Users/ferortega/Documents/padel-draw-app/app/components/ui/Tag.vue'
+import Tag from '@/components/ui/Tag.vue'
 
 describe('Tag.vue', () => {
   it('renders default variant and size', () => {

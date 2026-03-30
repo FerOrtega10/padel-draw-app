@@ -1,8 +1,8 @@
 import { describe, it, expect } from 'vitest'
 import { mount } from '@vue/test-utils'
-import TournamentCard from '/Users/ferortega/Documents/padel-draw-app/app/components/TournamentCard.vue'
-import UiButton from '/Users/ferortega/Documents/padel-draw-app/app/components/ui/Button.vue'
-import Tag from '/Users/ferortega/Documents/padel-draw-app/app/components/ui/Tag.vue'
+import TournamentCard from '@/components/TournamentCard.vue'
+import UiButton from '@/components/ui/Button.vue'
+import Tag from '@/components/ui/Tag.vue'
 
 describe('TournamentCard.vue', () => {
   const mockTournament = {

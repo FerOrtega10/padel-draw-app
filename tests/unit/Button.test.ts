@@ -1,6 +1,6 @@
 import { describe, it, expect } from 'vitest'
 import { mount } from '@vue/test-utils'
-import UiButton from '/Users/ferortega/Documents/padel-draw-app/app/components/ui/Button.vue'
+import UiButton from '@/components/ui/Button.vue'
 
 describe('UiButton.vue', () => {
   it('renders as a link when to prop is provided', () => {
