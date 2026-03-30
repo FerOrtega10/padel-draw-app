@@ -57,8 +57,8 @@ jobs:
       - name: Install ESLint
         run: pnpm add -D eslint @nuxt/eslint
 
-      - name: Run lint
-        run: pnpm lint
+      - name: Run eslint
+        run: pnpm eslint .
 
   build:
     name: Build Project
