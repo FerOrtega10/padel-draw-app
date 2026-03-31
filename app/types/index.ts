@@ -15,23 +15,21 @@ export type TournamentStatus = 'open' | 'in_progress' | 'completed'
 
 export interface Tournament {
   id: string
-  name: string
+  title: string
   description: string | null
   organizer_id: string
   status: TournamentStatus
   start_date: string
   end_date: string
   location: string | null
-  // prize: string | null
-  // flyer_url: string | null
+  prize: string | null
+  flyer_url: string | null
   created_at: string
-  // Joins (Optional fields for when we fetch related data)
-  // organizer?: Profile
 }
 
 export interface TournamentView extends Tournament {
-  organizer_name: string;
-  time_status: 'upcoming' | 'in_progress' | 'finished';
+  organizer_name: string
+  time_status: 'upcoming' | 'in_progress' | 'finished'
 }
 
 // 3. Registration (The approval flow)

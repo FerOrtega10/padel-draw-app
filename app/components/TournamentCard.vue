@@ -36,7 +36,7 @@ const formatDate = (dateStr: string) => {
     <div class="flex flex-col space-y-1.5 p-6">
       <div class="flex justify-between items-start">
         <h3 class="font-bold leading-none tracking-tight text-xl">
-          {{ tournament.name }}
+          {{ tournament.title }}
         </h3>
         <UiTag :variant="tournament.status === 'open' ? 'tertiary' : tournament.status === 'in_progress' ? 'secondary' : 'gray'" size="sm">
           {{ statusLabel[tournament.status] || 'Desconocido' }}

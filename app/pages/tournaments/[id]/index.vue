@@ -20,7 +20,7 @@
     <div v-else-if="tournament" class="space-y-8">
       <!-- Header -->
       <div class="flex flex-col items-center text-center space-y-4">
-        <h1 class="text-3xl font-bold">{{ tournament.name }}</h1>
+        <h1 class="text-3xl font-bold">{{ tournament.title }}</h1>
         <div class="flex items-center space-x-4">
           <UiTag :variant="tournament.status === 'open' ? 'tertiary' : tournament.status === 'in_progress' ? 'secondary' : 'gray'" size="md">
             {{ statusLabel[tournament.status] || 'Desconocido' }}
@@ -258,12 +258,11 @@
 </template>
 
 <script setup lang="ts">
-import { useRoute, useRouter } from '#app'
+import { useRoute } from '#app'
 import { ref } from 'vue'
-import { type TournamentView, type Team, type Match, type Registration, type Profile } from '~/types'
+import { type TournamentView, type Team, type Match, type Registration } from '~/types'
 
 const route = useRoute()
-const router = useRouter()
 const supabase = useSupabaseClient()
 
 const tournamentId = route.params.id as string

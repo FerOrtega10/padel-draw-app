@@ -7,11 +7,17 @@ import Tag from '@/components/ui/Tag.vue'
 describe('TournamentCard.vue', () => {
   const mockTournament = {
     id: '1',
-    name: 'Test Tournament',
+    title: 'Test Tournament',
     status: 'open',
     start_date: '2026-03-15',
     end_date: '2026-03-16',
-    organizer_name: 'John Doe'
+    organizer_name: 'John Doe',
+    description: null,
+    organizer_id: '123',
+    location: null,
+    prize: null,
+    flyer_url: null,
+    created_at: '2026-01-01'
   }
 
   it('renders tournament title', () => {

@@ -17,7 +17,7 @@
 import { type TournamentView } from '~/types'
 const supabase = useSupabaseClient()
 
-const { data: tournaments, error } = await useAsyncData<TournamentView[]>('tournaments', async () => {
+const { data: tournaments } = await useAsyncData<TournamentView[]>('tournaments', async () => {
   const { data } = await supabase
     .from('tournament_list_view')
     .select('*')
