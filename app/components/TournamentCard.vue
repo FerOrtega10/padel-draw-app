@@ -1,7 +1,5 @@
 <script setup lang="ts">
 import type { TournamentView } from '~/types'
-// import Tag from './ui/Tag.vue'
-// import { UiButton } from './ui/Button.vue'
 
 interface Props {
   tournament: TournamentView
@@ -10,18 +8,11 @@ interface Props {
 
 const props = defineProps<Props>()
 
-// Helper to handle status colors based on PadelSync branding
-// const statusConfig = computed(() => {
-//   const status = props.tournament.status
-//   if (status === 'open') return 'bg-emerald-50 text-emerald-700 border-emerald-100'
-//   if (status === 'in_progress') return 'bg-indigo-50 text-indigo-700 border-indigo-100'
-//   return 'bg-slate-50 text-slate-600 border-slate-100'
-// })
-
 const statusLabel = {
   open: 'Próximo',
   in_progress: 'En Curso',
-  completed: 'Completado',
+  closed: 'Cerrado',
+  finished: 'Finalizado',
 }
 
 const formatDate = (dateStr: string) => {
@@ -29,11 +20,20 @@ const formatDate = (dateStr: string) => {
   return date.toLocaleDateString('en-US', { month: 'long', day: 'numeric' })
 }
 </script>
-
+ 
 <template>
-  <div class="rounded-xl border border-slate-200 bg-white shadow-sm transition-all hover:shadow-md hover:-translate-y-1" :class="props.class">
+  <div class="rounded-xl border border-slate-200 bg-white shadow-sm transition-all hover:shadow-md hover:-translate-y-1 overflow-hidden" :class="props.class">
+     
+    <!-- Flyer Image -->
+    <div v-if="tournament.flyer_url" class="relative h-40 w-full overflow-hidden">
+      <img 
+        :src="tournament.flyer_url" 
+        :alt="tournament.title"
+        class="w-full h-full object-cover"
+      />
+    </div>
     
-    <div class="flex flex-col space-y-1.5 p-6">
+    <div class="flex flex-col space-y-1.5 p-6" :class="{ 'pt-4': !tournament.flyer_url }">
       <div class="flex justify-between items-start">
         <h3 class="font-bold leading-none tracking-tight text-xl">
           {{ tournament.title }}
@@ -61,9 +61,6 @@ const formatDate = (dateStr: string) => {
       <div class="flex items-center gap-3">
         <UiButton :to="`/tournaments/${tournament.id}`" variant="primary" size="md">
             Ver Detalles
-        </UiButton>
-        <UiButton v-if="tournament.status === 'open'" variant="secondary" size="md">
-          Unirse al torneo
         </UiButton>
       </div>
     </div>

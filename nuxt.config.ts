@@ -14,6 +14,7 @@ export default defineNuxtConfig({
       exclude: [
         '/',
         '/tournaments',
+        '/tournaments/*',
         '/auth/*',
       ],
     },

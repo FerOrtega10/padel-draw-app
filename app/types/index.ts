@@ -11,7 +11,7 @@ export interface Profile {
 }
 
 // 2. Tournament Entity
-export type TournamentStatus = 'open' | 'in_progress' | 'completed'
+export type TournamentStatus = 'open' | 'in_progress' | 'closed' | 'finished'
 
 export interface Tournament {
   id: string

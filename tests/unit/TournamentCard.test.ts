@@ -88,7 +88,7 @@ describe('TournamentCard.vue', () => {
     expect(button.props().to).toBe('/tournaments/1')
   })
 
-  it('shows Unirse al torneo button for open tournaments', () => {
+  it('shows only Ver Detalles button', () => {
     const wrapper = mount(TournamentCard, {
       props: {
         tournament: mockTournament
@@ -102,11 +102,11 @@ describe('TournamentCard.vue', () => {
     })
 
     const buttons = wrapper.findAllComponents(UiButton)
-    expect(buttons).toHaveLength(2)
-    expect(buttons[1].text()).toBe('Unirse al torneo')
+    expect(buttons).toHaveLength(1)
+    expect(buttons[0].text()).toBe('Ver Detalles')
   })
 
-  it('does not show Unirse al torneo button for non-open tournaments', () => {
+  it('renders correctly for non-open tournaments', () => {
     const closedTournament = {
       ...mockTournament,
       status: 'completed'
