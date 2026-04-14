@@ -35,13 +35,16 @@ const formatDate = (dateStr: string) => {
   <div class="rounded-xl border border-slate-200 bg-white shadow-sm transition-all hover:shadow-md hover:-translate-y-1 overflow-hidden" :class="props.class">
      
     <!-- Flyer Image -->
-    <div v-if="tournament.flyer_url" class="relative w-full">
-      <div class="relative w-full h-0 pt-[56.25%] overflow-hidden">
-        <img 
-          :src="tournament.flyer_url" 
-          :alt="tournament.title"
-          class="absolute inset-0 w-full h-full object-cover"
-        />
+    <div v-if="tournament.flyer_url" class="w-full">
+      <div class="relative w-full">
+        <!-- 16:9 Aspect Ratio Box -->
+        <div class="relative w-full pt-[56.25%]">
+          <img 
+            :src="tournament.flyer_url" 
+            :alt="tournament.title"
+            class="absolute inset-0 w-full h-full object-cover rounded-t-lg"
+          />
+        </div>
       </div>
     </div>
     
