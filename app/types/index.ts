@@ -17,17 +17,19 @@ export interface Tournament {
   id: string
   title: string
   description: string | null
-  organizer_id: string
-  status: TournamentStatus
   start_date: string
   end_date: string
   location: string | null
+  organizer_id: string
+
+  status: TournamentStatus
   prize: string | null
   flyer_url: string | null
   created_at: string
 }
 
 export interface TournamentView extends Tournament {
+  registration_open: boolean
   organizer_name: string
   time_status: 'upcoming' | 'in_progress' | 'finished'
 }

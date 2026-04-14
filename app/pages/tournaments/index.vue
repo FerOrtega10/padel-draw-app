@@ -20,7 +20,7 @@ const user = useSupabaseUser()
 
 const { data: tournaments } = await useAsyncData<TournamentView[]>('tournaments', async () => {
   const { data } = await supabase
-    .from('tournament_list_view')
+    .from('tournaments')
     .select('*')
   
   return data as TournamentView[]

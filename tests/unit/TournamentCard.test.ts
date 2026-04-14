@@ -36,7 +36,7 @@ describe('TournamentCard.vue', () => {
     expect(wrapper.text()).toContain('Test Tournament')
   })
 
-  it('displays correct date format', () => {
+  it('displays correct date format in Spanish with year', () => {
     const wrapper = mount(TournamentCard, {
       props: {
         tournament: mockTournament
@@ -49,11 +49,12 @@ describe('TournamentCard.vue', () => {
       }
     })
 
-    expect(wrapper.text()).toContain('March')
+    expect(wrapper.text()).toContain('marzo')
     expect(wrapper.text()).toContain('15')
+    expect(wrapper.text()).toContain('2026')
   })
 
-  it('shows organizer information', () => {
+  it('shows organizer information in Spanish', () => {
     const wrapper = mount(TournamentCard, {
       props: {
         tournament: mockTournament
@@ -66,6 +67,7 @@ describe('TournamentCard.vue', () => {
       }
     })
 
+    expect(wrapper.text()).toContain('Organizado por')
     expect(wrapper.text()).toContain('John Doe')
   })
 

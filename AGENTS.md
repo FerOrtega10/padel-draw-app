@@ -47,6 +47,7 @@ Se manejan tres tipos mediante un ENUM: `Caballeros`, `Damas`, y `Mixto`.
 - **Autoimports** Como se utiliza Nuxt, recordar que éste cuenta con autoimports para los componentes.
 - **Semicolons** No utilizar semicolons al final de cada instrucción.
 - **Quotes:** Usar siempre comillas simples ('') a menos que sea JSON.
+- Luego de cada acción realizada, ajustar o crear los respectivos tests.
 
 ## Comandos útiles
 - `pnpm dev` — servidor de desarrollo

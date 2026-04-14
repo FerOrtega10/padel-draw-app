@@ -1,5 +1,7 @@
 <script setup lang="ts">
 import type { TournamentView } from '~/types'
+// import Tag from './ui/Tag.vue'
+// import { UiButton } from './ui/Button.vue'
 
 interface Props {
   tournament: TournamentView
@@ -7,6 +9,14 @@ interface Props {
 }
 
 const props = defineProps<Props>()
+
+// Helper to handle status colors based on PadelSync branding
+// const statusConfig = computed(() => {
+//   const status = props.tournament.status
+//   if (status === 'open') return 'bg-emerald-50 text-emerald-700 border-emerald-100'
+//   if (status === 'in_progress') return 'bg-indigo-50 text-indigo-700 border-indigo-100'
+//   return 'bg-slate-50 text-slate-600 border-slate-100'
+// })
 
 const statusLabel = {
   open: 'Próximo',
@@ -17,23 +27,25 @@ const statusLabel = {
 
 const formatDate = (dateStr: string) => {
   const date = new Date(dateStr)
-  return date.toLocaleDateString('en-US', { month: 'long', day: 'numeric' })
+  return date.toLocaleDateString('es-ES', { year: 'numeric', month: 'long', day: 'numeric' })
 }
 </script>
- 
+
 <template>
   <div class="rounded-xl border border-slate-200 bg-white shadow-sm transition-all hover:shadow-md hover:-translate-y-1 overflow-hidden" :class="props.class">
      
     <!-- Flyer Image -->
-    <div v-if="tournament.flyer_url" class="relative h-40 w-full overflow-hidden">
-      <img 
-        :src="tournament.flyer_url" 
-        :alt="tournament.title"
-        class="w-full h-full object-cover"
-      />
+    <div v-if="tournament.flyer_url" class="relative w-full">
+      <div class="relative w-full h-0 pt-[56.25%] overflow-hidden">
+        <img 
+          :src="tournament.flyer_url" 
+          :alt="tournament.title"
+          class="absolute inset-0 w-full h-full object-cover"
+        />
+      </div>
     </div>
     
-    <div class="flex flex-col space-y-1.5 p-6" :class="{ 'pt-4': !tournament.flyer_url }">
+    <div class="flex flex-col space-y-1.5 p-6">
       <div class="flex justify-between items-start">
         <h3 class="font-bold leading-none tracking-tight text-xl">
           {{ tournament.title }}
@@ -53,7 +65,7 @@ const formatDate = (dateStr: string) => {
           {{ tournament.organizer_name?.charAt(0) || 'O' }}
         </div>
         <div class="text-sm">
-          <p class="text-slate-400 text-[10px] uppercase font-bold tracking-wider">Organizer</p>
+          <p class="text-slate-400 text-[10px] uppercase font-bold tracking-wider">Organizado por</p>
           <p class="text-slate-700 font-semibold">{{ tournament.organizer_name }}</p>
         </div>
       </div>
